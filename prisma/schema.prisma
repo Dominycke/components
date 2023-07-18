@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model SideMenu {
+  id         Int      @id @default(autoincrement())
+  item       String
+  booking    Bookings @relation(fields: [bookingsId], references: [id] )
+  bookingsId Int
+}
+
+model Bookings {
+  id         Int    @id @default(autoincrement())
+  pnr        String
+  agent      String
+  pax        String
+  name       String
+  fligths    String
+  departure  String
+  travel     String
+  status     String
+  total      String
+  expiration String
+  customer   String
+  email      String
+  phone      String
+  sideMenu SideMenu[]
+}
