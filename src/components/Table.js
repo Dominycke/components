@@ -9,7 +9,49 @@ export const formatDateTime = (date) => {
 	return fechaFormateada
 }
 
+export const SGVCheck = () => {
+	return (
+		<svg class="w-6 h-6 text-green-600 dark:text-green-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+			<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+		</svg>
+	)
+}
+export const SGVWorst = () => {
+	return (
+		<svg class="w-6 h-6 text-red-600 dark:text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 14">
+			<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+		</svg>
+	)
+}
+
+const SGVCustomer = () => {
+	return (
+		<svg class="w-6 h-6 text-gray-700 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
+			<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.333 6.764a3 3 0 1 1 3.141-5.023M2.5 16H1v-2a4 4 0 0 1 4-4m7.379-8.121a3 3 0 1 1 2.976 5M15 10a4 4 0 0 1 4 4v2h-1.761M13 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-4 6h2a4 4 0 0 1 4 4v2H5v-2a4 4 0 0 1 4-4Z" />
+		</svg>
+	)
+}
+
+const SGVEmail = () => {
+	return (
+		<svg class="w-6 h-6 text-gray-700 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 21">
+			<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 2-8.4 7.05a1 1 0 0 1-1.2 0L1 2m18 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1m18 0v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2" />
+		</svg>
+	)
+}
+
+const SGVPhone = () => {
+	return (
+		<svg class="w-6 h-6 text-gray-700 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 25">
+			<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 14h12M1 4h12M6.5 16.5h1M2 1h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Z" />
+		</svg>
+	)
+}
+
+
+
 const Booking = (params) => {
+
 	const {
 		pnr,
 		agent,
@@ -48,26 +90,14 @@ const Booking = (params) => {
 			<td>{status}</td>
 			<td>{total}</td>
 			<td>{expiration && formatDateTime(expiration)}</td>
-			<td>{customer ? '✅' : '❌'}</td>
-			<td>{email ? '✅' : '❌'}</td>
-			<td>{phone ? '✅' : '❌'}</td>
+			<td>{customer ? <SGVCheck /> : <SGVWorst />}</td>
+			<td>{email ? <SGVCheck /> : <SGVWorst />}</td>
+			<td>{phone ? <SGVCheck /> : <SGVWorst />}</td>
 		</tr>
 	)
 }
 
 const Table = () => {
-
-	const svgCustomer = `<svg class="w-6 h-6 text-gray-700 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
-												<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.333 6.764a3 3 0 1 1 3.141-5.023M2.5 16H1v-2a4 4 0 0 1 4-4m7.379-8.121a3 3 0 1 1 2.976 5M15 10a4 4 0 0 1 4 4v2h-1.761M13 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-4 6h2a4 4 0 0 1 4 4v2H5v-2a4 4 0 0 1 4-4Z"/>
-											</svg>`
-
-	const sgvEmail = `<svg class="w-6 h-6 text-gray-700 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 21">
-											<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 2-8.4 7.05a1 1 0 0 1-1.2 0L1 2m18 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1m18 0v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2"/>
-										</svg>`
-
-	const sgvPhone = `<svg class="w-6 h-6 text-gray-700 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 25">
-											<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 14h12M1 4h12M6.5 16.5h1M2 1h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Z"/>
-										</svg>`
 	return (
 		<div>
 			<div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -84,9 +114,9 @@ const Table = () => {
 							<th scope="col" className="px-2 py-2">Estado</th>
 							<th scope="col" className="px-2 py-2">Total</th>
 							<th scope="col" className="px-2 py-2">Expiración</th>
-							<th scope="col" className="px-2 py-2"><span dangerouslySetInnerHTML={{ __html: svgCustomer }} /></th>
-							<th scope="col" className="px-2 py-2"><span dangerouslySetInnerHTML={{ __html: sgvEmail }} /></th>
-							<th scope="col" className="px-2 py-2"><span dangerouslySetInnerHTML={{ __html: sgvPhone }} /></th>
+							<th scope="col" className="px-2 py-2"><SGVCustomer /></th>
+							<th scope="col" className="px-2 py-2"><SGVEmail /></th>
+							<th scope="col" className="px-2 py-2"><SGVPhone /></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -103,9 +133,9 @@ const Table = () => {
 							<td className="px-2 py-2">Confrimed</td>
 							<td className="px-2 py-2">$280.90 USD</td>
 							<td className="px-2 py-2">07/07/23</td>
-							<td className="px-2 py-2">❌</td>
-							<td className="px-2 py-2">✅</td>
-							<td className="px-2 py-2">✅</td>
+							<td className="px-2 py-2"><SGVWorst /></td>
+							<td className="px-2 py-2"><SGVCheck /></td>
+							<td className="px-2 py-2"><SGVCheck /></td>
 						</tr>
 
 					</tbody>

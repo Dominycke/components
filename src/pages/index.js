@@ -1,8 +1,10 @@
+import Login from "@/components/Login";
 import SideBar from "@/components/SideBar";
 
 export default function Home() {
 
   return (
-    <SideBar />
+    <Login />
+    // <SideBar />
   )
 }
