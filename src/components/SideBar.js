@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import NavBar from './NavBar'
 import SideBarItem from './SideBarItem'
 import Filters from './Filters'
+import DropdownRadio from './DropdownRadio'
+import Table from './Table'
 
 const SideBar = () => {
-
 	const [open, setOpen] = useState(true)
 
 	return (
@@ -29,7 +30,9 @@ const SideBar = () => {
 					</SideBarItem>
 				</ul>
 			</div>
-			<div className='w-full bg-white border-b border-gray-500 dark:bg-gray-700 dark:border-gray-600'><Filters></Filters></div>
+			<div className='w-full bg-white border-b border-gray-500 dark:bg-gray-700 dark:border-gray-600'>
+			<Table></Table>
+			</div>
 		</div>
 	</>
 	)
