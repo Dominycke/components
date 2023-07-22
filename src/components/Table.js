@@ -99,10 +99,10 @@ const Booking = (params) => {
 
 const Table = () => {
 	return (
-		<div>
+		<div className='pt-2 pl-2 w-full p-4'>
 			<div className="relative overflow-x-auto shadow-md sm:rounded-lg">
 				<table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-					<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+					<thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
 						<tr>
 							<th scope="col" className="px-2 py-2">Reserva</th>
 							<th scope="col" className="px-2 py-2">Agente</th>
@@ -120,7 +120,7 @@ const Table = () => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+						<tr className="bg-white border-b dark:bg-gray-700 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600">
 							<th scope="row" className="px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
 								SDSRFZ
 							</th>
@@ -137,11 +137,9 @@ const Table = () => {
 							<td className="px-2 py-2"><SGVCheck /></td>
 							<td className="px-2 py-2"><SGVCheck /></td>
 						</tr>
-
 					</tbody>
 				</table>
 			</div>
-
 		</div>
 	)
 }
