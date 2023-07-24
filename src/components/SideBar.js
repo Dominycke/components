@@ -4,6 +4,10 @@ import SideBarItem from './SideBarItem'
 import Filters from './Filters'
 import DropdownRadio from './DropdownRadio'
 import Table from './Table'
+import TableCustomer, { TableAgent, TableNotice } from './TableCustomer'
+// import TableAgent from './TableAgent'
+// import TableNotice from './TableNotice'
+import CRUDCustomer, { CRUDAgent, CRUDNotice } from './CRUD'
 
 const SideBar = () => {
 	const [open, setOpen] = useState(true)
@@ -32,7 +36,15 @@ const SideBar = () => {
 				</div>
 				<div className='w-full bg-white border-b border-gray-500 dark:bg-gray-700 dark:border-gray-600'>
 					<Filters />
-					<Table></Table>
+					{/* <Table></Table> */}
+
+					<TableCustomer />
+					<TableAgent />
+					<TableNotice />
+
+					{/* <CRUDCustomer /> */}
+					{/* <CRUDAgent /> */}
+					{/* <CRUDNotice /> */}
 				</div>
 			</div>
 		</>

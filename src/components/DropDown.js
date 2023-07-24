@@ -38,19 +38,19 @@ const DropDown = ({ text }) => {
 }
 
 // export const DropdownCheckboxItem = ({ children, value = '', onClick, checked, divider = false }) => {
-export const DropdownCheckboxItem = () => {
-	return (
-		<li className='dropdown-item py-0 px-2' value={value} onClick={onClick}>
-			<div className='form-check' value={value}>
-				<input className='form-check-input' type='checkbox' checked={checked} value={value} readOnly />
-				<label className='form-check-label' value={value}>
-					{children}
-				</label>
-			</div>
-			{divider && <div className='dropdown-divider my-1' />}
-		</li>
-	)
-}
+// export const DropdownCheckboxItem = () => {
+// 	return (
+// 		<li className='dropdown-item py-0 px-2' value={value} onClick={onClick}>
+// 			<div className='form-check' value={value}>
+// 				<input className='form-check-input' type='checkbox' checked={checked} value={value} readOnly />
+// 				<label className='form-check-label' value={value}>
+// 					{children}
+// 				</label>
+// 			</div>
+// 			{divider && <div className='dropdown-divider my-1' />}
+// 		</li>
+// 	)
+// }
 
 export default DropDown
 

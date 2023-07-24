@@ -1,4 +1,4 @@
-import CRUD from "@/components/CRUD";
+import CRUD from "@/components/TableCustomer";
 import Login from "@/components/Login";
 import SideBar from "@/components/SideBar";
 
